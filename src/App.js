@@ -1,16 +1,22 @@
-import './App.css';
+import "./App.css";
 
-//react slick css
-import "slick-carousel/slick/slick.css"; 
+// react slick css
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// Routing System
+import { Route, Routes } from "react-router-dom";
+// Pages
+import HomePage from "./pages/Home.Page";
+import PlaysPage from "./pages/Plays.Page";
+import MoviePage from "./pages/Movie.Page";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-indigo-600 tracking-wider">
-      Hello world!
-    </h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/Movie/:id" element={<MoviePage />} />
+      <Route path="/Plays" element={<PlaysPage />} />
+    </Routes>
   );
 }
 
