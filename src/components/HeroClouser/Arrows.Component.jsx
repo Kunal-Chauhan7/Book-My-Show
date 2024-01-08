@@ -16,6 +16,7 @@ export const PrevArrow = (props) => {
     <div 
         className={props.className} 
         style={{...props}} 
-        onClick={props.onClick}/>
+        onClick={props.onClick}
+      />
     </>
   }

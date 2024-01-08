@@ -47,7 +47,7 @@ const HeroClouser = () => {
     speed:500,
     slideToScroll:1,
     nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>,
+    prevArrow: <PrevArrow/>
   }
 
   const settingsLS = {
