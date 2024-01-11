@@ -64,8 +64,8 @@ const HeroClouser = () => {
     <div className="lg:hidden ">
       <HeroSlider {...settings}>
         {
-          Images.map((img) =>(
-            <div className="w-full h-56 md:h-80 py-3">
+          Images.map((img , index) =>(
+            <div className="w-full h-56 md:h-80 py-3" key={index}>
               <img 
                 src={`https://image.tmdb.org/t/p/original${img.backdrop_path}}`} 
                 alt="Hero Banner" 
@@ -79,8 +79,8 @@ const HeroClouser = () => {
     <div className="hidden lg:block">
     <HeroSlider {...settingsLS}>
         {
-          Images.map((img) =>(
-            <div className="w-full h-96 px-2 py-3">
+          Images.map((img , index) =>(
+            <div className="w-full h-96 px-2 py-3" key={index}>
               <img 
                 src={`https://image.tmdb.org/t/p/original${img.backdrop_path}`}
                 alt="Hero Banner" 

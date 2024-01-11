@@ -1,11 +1,9 @@
 import React from 'react'
 
 const Poster = (props) => {
-    const{poster ,title ,subtitle ,isDark ,config} = props;
-    const settings = {} 
   return (
-    <div>Poster</div>
+    <div>{props.original_title}</div>
   )
 }
 
-export default Poster
+export default Poster;
