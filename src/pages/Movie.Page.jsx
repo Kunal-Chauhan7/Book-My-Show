@@ -7,13 +7,14 @@ import Slider from 'react-slick';
 import {FaCcVisa} from 'react-icons/fa'
 import {FaCcApplePay} from 'react-icons/fa'
 import PosterSlider from '../components/PosterSlider/PosterSlider.component';
+import MovieHero from '../components/MovieHero/MovieHero.Component';
 
 const MoviePage = () => {
 
 
   const {id} = useParams();
   
-  const{movie} = useContext(MovieContext);
+  const{movie,setMovie} = useContext(MovieContext);
 
   const [cast , setCast] = useState([]);
   const[similarMovies,setSimilarMovies] = useState([]);
@@ -46,6 +47,14 @@ const MoviePage = () => {
     requestRecommndedMovies();
   },[id]);
 
+  useEffect(()=>{
+    const requestMovie = async()=>{
+      const getMovieData = await axios.get(`/movie/${id}?api_key=7dbd84284e8f5b0288084cb828f125ed`);
+      setMovie(getMovieData.data)
+    }
+    requestMovie()
+  },[id])
+
   const settingCast = {};
 
   const settings = {};
@@ -54,8 +63,8 @@ const MoviePage = () => {
 
   return (
     <>
-      {/*<MovieHero/>*/}
-      <div className='my-12 container px-4 lg-ml-20 lg:w-2/1'>
+      <MovieHero/>
+      <div className='my-12 container px-4 lg-ml-20'>
         <div className='flex flex-col items-start gap-3 '>
           <h1 className='text-gray-800 font-bold text-2xl'>
             About the movie 
