@@ -57,7 +57,39 @@ const MoviePage = () => {
 
   const settingCast = {};
 
-  const settings = {};
+  const settings = {
+    infinite:false,
+    speed:500,
+    slidesToShow:5,
+    slidesToScroll:5,
+    initialSlide:0,
+    responsive:[
+      {
+        breakpoint:1024,
+        settings:{
+          slidesToShow:3,
+          slidesToScroll:3,
+
+        }
+      },
+      {
+        breakpoint:600,
+        settings:{
+          slidesToShow:2,
+          slidesToScroll:2,
+          initialSlide:3,
+        }
+      },
+      {
+        breakpoint:480,
+        settings:{
+          slidesToShow:3,
+          slidesToScroll:1,
+          initialSlide:3,
+        }
+      }
+    ]
+  };
   
 
 
@@ -119,7 +151,7 @@ const MoviePage = () => {
         <div>
           <PosterSlider
           config={settings}
-          title="recommendedMovies"
+          title="recommended Movies"
           posters={recommendedMovies}
           isDark={false}
           />
