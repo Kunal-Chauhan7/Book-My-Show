@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { BiChevronDown, BiMenu, BiSearch, BiShareAlt } from 'react-icons/bi'
 import { MovieContext } from '../../context/Movie.Context'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const SmallnavBar = () => {
   const { movie } = useContext(MovieContext);
@@ -41,6 +42,9 @@ const Navbar = () => {
           <span className='text-gray-200 text-base flex items-center cursor-pointer hover:text-white'>
             Delhi NCR <BiChevronDown/>
           </span>
+          <Link to='/Plays' className='text-gray-200 text-base flex items-center cursor-pointer hover:text-white'>
+            Plays
+          </Link>
           <button className='bg-red-600 text-white px-2 py-1 text-sm rounded'>
             Sign In
           </button>
