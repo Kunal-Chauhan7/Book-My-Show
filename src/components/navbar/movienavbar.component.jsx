@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { BiChevronDown, BiMenu, BiSearch, BiShareAlt } from 'react-icons/bi'
 import { MovieContext } from '../../context/Movie.Context'
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const SmallnavBar = () => {
