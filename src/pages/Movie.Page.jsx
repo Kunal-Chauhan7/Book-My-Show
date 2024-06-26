@@ -17,6 +17,7 @@ const MoviePage = () => {
   
   const{movie,setMovie} = useContext(MovieContext);
 
+  const [movieLink,setMovieLink] = useState("");
   const [cast , setCast] = useState([]);
   const[similarMovies,setSimilarMovies] = useState([]);
   const[recommendedMovies , setRecommendedMovies] = useState([]);
@@ -51,7 +52,9 @@ const MoviePage = () => {
   useEffect(()=>{
     const requestMovie = async()=>{
       const getMovieData = await axios.get(`/movie/${id}?api_key=7dbd84284e8f5b0288084cb828f125ed`);
-      setMovie(getMovieData.data)
+      setMovie(getMovieData.data);
+      let link = `https://vidsrc.xyz/embed/movie/${getMovieData.data.imdb_id}`;
+      setMovieLink(link);
     }
     requestMovie()
   },[id])
@@ -194,7 +197,12 @@ const MoviePage = () => {
         <div className='my-8'>
           <hr />
         </div>
-
+        <div>
+        <iframe src={movieLink}
+        className='w-full h-[100vh] ml-4' 
+        referrerpolicy="origin" allowFullScreen>
+        </iframe>
+        </div>
         {/*Recomened movie Slider*/}
         <div>
           <PosterSlider
