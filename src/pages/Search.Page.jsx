@@ -10,7 +10,7 @@ const Search = () => {
 
   useEffect(() => {
     const requestSearch = async () => {
-        const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=7dbd84284e8f5b0288084cb828f125ed&query=${query}&include_adult=false&language=en-US&page=1`);
+        const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=7dbd84284e8f5b0288084cb828f125ed&query=${query}&include_adult=true&language=en-US&page=1`);
         setSearch(res.data.results || []); 
     };
     requestSearch();
